@@ -15,4 +15,6 @@ dish_category = gets.chomp
 
 chef_app.add_dish(dish_name, dish_category)
 
+chef_app.dishes.last.recommend_dish
+
 chef_app.view_menu
