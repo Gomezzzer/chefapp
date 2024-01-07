@@ -13,8 +13,8 @@ dish_name = gets.chomp
 puts 'Enter the category of the dish:'
 dish_category = gets.chomp
 
-chef_app.add_dish(dish_name, dish_category)
+chef_app.add_dish(dish_name, dish_category) 
 
-chef_app.dishes.last.recommend_dish
+chef_app.dishes.first.recommend_dish
 
 chef_app.view_menu

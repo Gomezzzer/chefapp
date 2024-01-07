@@ -1,5 +1,5 @@
 # chef_app.rb
-require_relative 'dish'  # Include the Dish class
+require_relative 'dish'  
 
 class ChefApp
   attr_accessor :dishes
