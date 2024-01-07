@@ -1,5 +1,8 @@
-# ruby-cli-template
+# Chefapp Cli
 
-Use this repository as a template for your Ruby CLI (command line interface) project.
+Ruby CLI (command line interface) project simulating a Chef adding dishes to a menu.
 
-- Ruby version: `3.2.1`
+## Operation
+
+Run ```ruby main.rb``` in the terminal.
+
