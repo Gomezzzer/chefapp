@@ -1,6 +1,7 @@
 # chef_app.rb
 require_relative 'dish'  
 
+# Maybe this could be called 'Menu'?
 class ChefApp
   attr_accessor :dishes
 
