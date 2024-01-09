@@ -1,8 +1,6 @@
-# chef_app.rb
-require_relative 'dish'  
+require_relative 'dish'
 
-# Maybe this could be called 'Menu'?
-class ChefApp
+class Menu 
   attr_accessor :dishes
 
   def initialize
@@ -12,7 +10,15 @@ class ChefApp
   def add_dish(name, category)
     dish = Dish.new(name, category)
     @dishes << dish
-    puts "#{name} has been added to the menu."
+    puts "You have #{name} on the menu."
+  end
+
+  def recommend_dish(dish_name)
+    dish = find_dish_by_name(dish_name)
+    return unless dish
+
+    dish.chef_recommendation = true
+    puts "#{dish.name} has been recommended by the chef!"
   end
 
   def view_menu
@@ -20,7 +26,33 @@ class ChefApp
     @dishes.each do |dish|
       recommendation = dish.chef_recommendation ? '(Chef Recommended)' : ''
       puts "#{dish.name} - #{dish.category} #{recommendation}"
+    end
   end
 
- end
+  def run_menu_app
+    add_dish('Spaghetti Bolognese', 'Pasta')
+    add_dish('Grilled Salmon', 'Seafood')
+    add_dish('Escargot', 'Starter') 
+
+    loop do
+      puts 'Enter the name of the dish (type "exit" to finish):'
+      dish_name = gets.chomp
+
+      break if dish_name.downcase == 'exit'
+
+      puts 'Enter the category of the dish:'
+      dish_category = gets.chomp
+
+      add_dish(dish_name, dish_category)
+    end
+
+      recommend_dish('Spaghetti Bolognese')
+      view_menu
+  end
+
+  private
+
+  def find_dish_by_name(name)
+    @dishes.find { |dish| dish.name == name }
+  end
 end
