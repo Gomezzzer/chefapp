@@ -21,7 +21,7 @@ class Menu
     puts "#{dish.name} has been recommended by the chef!"
   end
 
-  def view_menu
+  def view
     puts 'Menu:'
     @dishes.each do |dish|
       recommendation = dish.chef_recommendation ? '(Chef Recommended)' : ''
@@ -29,7 +29,7 @@ class Menu
     end
   end
 
-  def run_menu_app
+  def run
     add_dish('Spaghetti Bolognese', 'Pasta')
     add_dish('Grilled Salmon', 'Seafood')
     add_dish('Escargot', 'Starter') 
@@ -47,7 +47,7 @@ class Menu
     end
 
       recommend_dish('Spaghetti Bolognese')
-      view_menu
+      view
   end
 
   private

@@ -1,8 +1,8 @@
 # main.rb
-require_relative 'chef_app' 
+require_relative 'menu' 
 
 menu_app = Menu.new
-menu_app.run_menu_app
+menu_app.run 
 
 
 
