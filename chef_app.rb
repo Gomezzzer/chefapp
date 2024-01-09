@@ -1,3 +1,5 @@
+# This file should be the same name as the class (so rename file to menu.rb)
+
 require_relative 'dish'
 
 class Menu 
@@ -21,6 +23,7 @@ class Menu
     puts "#{dish.name} has been recommended by the chef!"
   end
 
+  # Can probably rename this `view` since it's in the Menu class
   def view_menu
     puts 'Menu:'
     @dishes.each do |dish|
@@ -29,11 +32,15 @@ class Menu
     end
   end
 
+  # Can probably just call this `run`
   def run_menu_app
+
+    # Maybe move these 3 dishes to an 'example' method?
     add_dish('Spaghetti Bolognese', 'Pasta')
     add_dish('Grilled Salmon', 'Seafood')
     add_dish('Escargot', 'Starter') 
 
+    # Maybe add a case-when or if-else chain with a few options for the user to choose (add dish, example menu, view menu, recommend dish, exit, etc.)
     loop do
       puts 'Enter the name of the dish (type "exit" to finish):'
       dish_name = gets.chomp
@@ -46,8 +53,11 @@ class Menu
       add_dish(dish_name, dish_category)
     end
 
-      recommend_dish('Spaghetti Bolognese')
-      view_menu
+    # Maybe create a 'recommend dish' option for the user
+    recommend_dish('Spaghetti Bolognese')
+
+    # Maybe create a 'view menu' option for the user
+    view_menu
   end
 
   private
